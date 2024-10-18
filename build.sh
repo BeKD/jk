@@ -7,7 +7,7 @@ APP="/data/myapp/jk.jar"
 LOG_FILE="/data/logs/jk.log"
 
 # 指定端口
-PORT="18080"
+PORT="18081"
 
 echo "构建开始..."
 mvn clean package
