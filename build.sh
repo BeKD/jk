@@ -17,6 +17,6 @@ echo "复制开始..."
 cp ./target/*.jar $APP
 echo "复制结束!"
 
-echo "java程序启动..."
+echo "Java程序启动..."
 nohup java -jar $APP --server.port=$PORT > $LOG_FILE 2>&1
-echo "java程序启动成功!"
+echo "Java程序启动成功!"
