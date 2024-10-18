@@ -20,3 +20,4 @@ echo "复制结束!"
 nohup java -jar $APP --server.port=$PORT > $LOG_FILE 2>&1
 echo "程序启动..."
 echo "程序启动成功!"
+
