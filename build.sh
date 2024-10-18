@@ -10,5 +10,3 @@ mvn clean package
 
 cp ./target/*.jar $APP_DIR
 
-
-
