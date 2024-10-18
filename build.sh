@@ -1,13 +1,16 @@
 #!/bin/sh
 
 # 部署目录
-APP_DIR="/data/myapp"
+APP="/data/myapp/jk.jar"
 
 # 日志目录
-LOG_DIR="/data/logs/jk.log"
+LOG_FILE="/data/logs/jk.log"
+
+# 指定端口
+PORT="18080"
 
 mvn clean package
 
-cp ./target/*.jar $APP_DIR/jk.jar
+cp ./target/*.jar $APP
 
-# nohup java -jar  $APP_DIR/jk.jar >$LOG_DIR 2>&1 &
+nohup java -jar --server.port=$PORT $APP > $LOG_FILE 2>&1
