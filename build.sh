@@ -25,6 +25,7 @@ echo "复制开始..."
 cp ./target/*.jar $JAR_DIR/$JAR_NAME
 echo "复制结束!"
 
+
 # 检查程序是否处于运行状态
 is_exist() {
   # 查询出应用服务的进程id，grep -v 是反向查询的意思，查找除了grep操作的run.jar的进程之外的所有进程
