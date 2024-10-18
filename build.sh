@@ -10,4 +10,4 @@ mvn clean package
 
 cp ./target/*.jar $APP_DIR/jk.jar
 
-# nohup java -jar  $APP_DIR/jk.jar >$LOG_NAME 2>&1 &
+# nohup java -jar  $APP_DIR/jk.jar >$LOG_DIR 2>&1 &
