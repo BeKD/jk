@@ -3,11 +3,8 @@
 # 部署目录
 APP_DIR="/data/myapp"
 
-# 应用名字
-APP_NAME="jk"
-
 # 日志目录
-LOG_DIR="/data/logs"
+LOG_DIR="/data/logs/jk.log"
 
 mvn clean package
 
