@@ -11,7 +11,7 @@ JAR_PID=$JAR_NAME\.pid
 LOG_DIR="/data/logs"
 
 # 指定端口
-PORT="18081"
+PORT=18081
 
 # java虚拟机参数
 JAVA_OPTS="-Xms256m -Xmx256m -Dfile.encoding=utf-8"
@@ -57,14 +57,14 @@ is_exist() {
 start() {
   is_exist
   if [ $? -eq "1" ]; then
-    echo "$JAR_HOME is already running pid is ${pid}"
+    echo "$JAR_NAME is already running pid is ${pid}"
   else
     # jar服务启动脚本
     echo "Java程序启动..."
     nohup java $JAVA_OPTS -Xloggc:$LOG_DIR/gc/gclog.log -XX:HeapDumpPath=$LOG_DIR/gc/HeapDump.hprof -jar $JAR_DIR/$JAR_NAME --server.port=$PORT > $LOG_DIR/run.log 2>&1 &
     echo "Java程序启动成功! pid is $!"
     echo $! > $JAR_PID
-    echo "start $JAR_HOME successed pid is $! "
+    echo "start $JAR_NAME successed pid is $! "
     # tail -1000f $LOG_DIR/run.log
   fi
 }
@@ -72,10 +72,10 @@ start() {
 # 服务停止方法
 stop() {
   # is_exist
-  pidf=`jps -l | grep "jk.jar" | awk '{print $1}' `
+  pid=`jps -l | grep "jk.jar" | awk '{print $1}' `
   # echo "$pidf"
-  echo "pid = $pidf. begin kill $pidf"
-  kill $pidf
+  echo "pid = $pid. begin kill $pid"
+  kill $pid
   # rm -rf $JAR_PID
   sleep 2
   # 判断服务进程是否存在
@@ -84,9 +84,9 @@ stop() {
     echo "pid = $pid. begin kill -9 $pid"
     kill -9  $pid
     sleep 2
-    echo "$JAR_HOME process stopped！"
+    echo "$JAR_NAME process stopped！"
   else
-    echo "$JAR_HOME is not running！"
+    echo "$JAR_NAME is not running！"
   fi
 }
 
