@@ -1,5 +1,13 @@
 #!/bin/sh
 
-mvn clean package
+# 部署目录
+APP_DIR="/data/myapp"
 
-cp target/jk-0.0.1-SNAPSHOT.jar /data
+# 日志目录
+LOG_DIR="/data/logs"
+
+
+cp ./target/*.jar $APP_DIR
+
+
+
