@@ -9,4 +9,3 @@ LOG_DIR="/data/logs"
 mvn clean package
 
 cp ./target/*.jar $APP_DIR
-
