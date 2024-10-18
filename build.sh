@@ -64,7 +64,7 @@ start() {
     echo "Java程序启动成功! pid is $!"
     echo $! > $JAR_PID
     echo "start $JAR_HOME successed pid is $! "
-    tail -1000f LOG_DIR/run.log
+    # tail -1000f $LOG_DIR/run.log
   fi
 }
 
