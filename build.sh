@@ -14,7 +14,7 @@ LOG_DIR="/data/logs"
 PORT=18081
 
 # java虚拟机参数
-JAVA_OPTS="-Xms256m -Xmx256m -Dfile.encoding=utf-8"
+JAVA_OPTS="-Xms256m -Xmx256m -Xloggc:$LOG_DIR/gc-%t.log -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=7 -XX:GCLogFileSize=64M -Dfile.encoding=utf-8"
 
 
 echo "构建开始..."
