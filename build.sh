@@ -61,7 +61,7 @@ start() {
   else
     # jar服务启动脚本
     echo "Java程序启动..."
-    nohup java -jar /data/myapp/jk.jar --server.port=18081 > $LOG_DIR/run.log 2>&1 &
+    nohup java -jar $JAR_DIR/$JAR_NAME --server.port=$PORT > $LOG_DIR/run.log 2>&1 &
     echo "Java程序启动成功! pid is $!"
   fi
 }
