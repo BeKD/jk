@@ -63,22 +63,11 @@ start() {
     echo "Java程序启动..."
     nohup java -jar /data/myapp/jk.jar --server.port=18081 > $LOG_DIR/run.log 2>&1
     echo "Java程序启动成功! pid is $!"
-    echo $! > $JAR_PID
-    echo "start $JAR_NAME successed pid is $! "
-    # tail -1000f $LOG_DIR/run.log
   fi
 }
 
 # 服务停止方法
 stop() {
-  # is_exist
-  pid=`jps -l | grep "jk.jar" | awk '{print $1}' `
-  # echo "$pidf"
-  echo "pid = $pid. begin kill $pid"
-  kill $pid
-  # rm -rf $JAR_PID
-  sleep 2
-  # 判断服务进程是否存在
   is_exist
   if [ $? -eq "1" ]; then
     echo "pid = $pid. begin kill -9 $pid"
@@ -94,9 +83,9 @@ stop() {
 status() {
   is_exist
   if [ $? -eq "1" ]; then
-    echo "$JAR_HOME is running，pid is ${pid}"
+    echo "$JAR_NAME is running，pid is ${pid}"
   else
-    echo "$JAR_HOME is not running！"
+    echo "$JAR_NAME is not running！"
   fi
 }
 
